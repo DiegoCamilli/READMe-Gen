@@ -2,7 +2,6 @@ const fs = require("fs")
 const inquirer = require("inquirer")
 const generateMarkdown = require("./Utils/generateMarckdown")
 
-// TODO: Create an array of questions for user input
 const questions = [
     {
         name: 'title',
@@ -10,7 +9,7 @@ const questions = [
         message: 'What is your Project Title? ',
         validate: projectTitle => {
             if ( projectTitle ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must enter a unique Project Title. ')
                 return false
@@ -24,10 +23,10 @@ const questions = [
         message: 'Enter a description for your Project. ',
         validate: description => {
             if ( description ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! Please enter a Project description. ')
-                return false;
+                return false
             }
         }
     },
@@ -37,10 +36,10 @@ const questions = [
         message: 'Provide instructions for Instalation of your Project.',
         validate: instalation => {
             if ( instalation ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must provide instalation instructions for your Project.')
-                return false;
+                return false
             }
         }
     },
@@ -51,7 +50,7 @@ const questions = [
         message: 'How do we use this Project? ',
         validate: usage => {
             if ( usage ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must provide usage instructions.')
                 return false;
@@ -72,10 +71,10 @@ const questions = [
         message: 'What are your contribution guidelines? ',
         validate: contribution => {
             if ( contribution ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must provide instructions on how to contribute.')
-                return false;
+                return false
             }
         }
     },
@@ -86,10 +85,10 @@ const questions = [
         message: 'How should Tests be conducted? ',
         validate: tests => {
             if ( tests ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must provide instructions for tests.')
-                return false;
+                return false
             }
         }
     },
@@ -100,10 +99,10 @@ const questions = [
         message: 'Enter your GitHub link or username. ',
         validate: github => {
             if ( github ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must enter a GitHub account.')
-                return false;
+                return false
             }
         }
     },
@@ -114,22 +113,42 @@ const questions = [
         message: 'Enter your prefered Email. ',
         validate: email => {
             if ( email ) {
-                return true;
+                return true
             } else {
                 console.log('Uh Oh! You must enter your prefered Email. ')
-                return false;
+                return false
             }
         }
     }
 ]
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', data, err => {
+            if (err) {
+                reject (err)
+                return;
+            }
+            resolve({
+                ok: true, 
+                message: console.log('To view your new READMe file, Check the "Dist" folder. ')
+            })
+        })
+    })
+}
 
-// TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions)
 }
 
-// Function call to initialize app
-init();
+init()
+.then(data => {
+    const markdown = generateMarkdown(data);
+    return writeToFile("README.md", markdown);
+})
+.then(response => {
+    console.log(response.message);
+})
+.catch(err => {
+    console.log(err);
+})
