@@ -85,6 +85,34 @@ const questions = [
                 return false;
             }
         }
+    },
+
+    {
+        name: 'github',
+        type: 'input',
+        message: 'Enter your GitHub link or username. ',
+        validate: github => {
+            if ( github ) {
+                return true;
+            } else {
+                console.log('Uh Oh! You must enter a GitHub account.')
+                return false;
+            }
+        }
+    },
+
+    {
+        name: 'email',
+        type: 'input',
+        message: 'Enter your prefered Email. ',
+        validate: email => {
+            if ( email ) {
+                return true;
+            } else {
+                console.log('Uh Oh! You must enter your prefered Email. ')
+                return false;
+            }
+        }
     }
 ]
 
