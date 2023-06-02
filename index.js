@@ -60,6 +60,13 @@ const questions = [
     },
 
     {
+        name: 'license',
+        type: 'list',
+        message: 'Please select a lisence type: ',
+        choices: ['MIT', 'Apache 2.0', 'GPLv3', 'BSD-3', 'No License']
+    },
+
+    {
         name: 'contributions',
         type: 'input',
         message: 'What are your contribution guidelines? ',
