@@ -7,11 +7,11 @@ const questions = [
         name: 'title',
         type: 'input',
         message: 'What is your Project Title? ',
-        validate: projectTitle => {
-            if ( projectTitle ) {
+        validate: title => {
+            if ( title ) {
                 return true
             } else {
-                console.log('Uh Oh! You must enter a unique Project Title. ')
+                console.log('Uh Oh! You must enter a Project Title. ')
                 return false
             }
         }
@@ -122,7 +122,7 @@ const questions = [
     }
 ]
 
-function writeToFile(fileName, data) {
+function writeToFile(data) {
     return new Promise((resolve, reject) => {
         fs.writeFile('./Dist/README.md', data, err => {
             if (err) {
