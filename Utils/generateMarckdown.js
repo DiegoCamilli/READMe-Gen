@@ -52,7 +52,7 @@ function generateMarkdown(data) {
 ---
   ## Description
 
-  $(data.description)
+  ${data.description}
   ---
   ---
   ## Table of Contents
@@ -65,30 +65,30 @@ function generateMarkdown(data) {
   ---
   ## Instalation
   
-  $(data.instalation)
+  ${data.instalation}
   ---
   ---
   ## Usage
   
-  $(data.usage)
+  ${data.usage}
   ---
   ---
   ## Contributions
   
-  $(data.contributions)
+  ${data.contributions}
   ---
   ---
   ## Tests
   
-  $(data.tests)
+  ${data.tests}
   ---
   ---
   ## Have Questions? Contact Me!
   
-  Visit my GitHub: $(data.github)
-  Contact me via Email at: $(data.email)
+  Visit my GitHub: ${data.github}
+  Contact me via Email at: ${data.email}
 
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateMarkdown
