@@ -122,7 +122,7 @@ const questions = [
     }
 ]
 
-function writeToFile(data) {
+function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile('./Dist/README.md', data, err => {
             if (err) {
