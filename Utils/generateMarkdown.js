@@ -57,42 +57,42 @@ function generateMarkdown(data) {
 ---
   ## Description
 
-  ${data.description}
+  ### ${data.description}
   ---
   ---
   ## Table of Contents
   
-  *[Instalation](#Instalation)
-  *[Usage](#Usage)
-  *[Lisence](#Lisence)
-  *[Contribution](#Contribution)
-  *[Tests](#Tests)
+  * [Instalation](#Instalation)
+  * [Usage](#Usage)
+  * [Lisence](#Lisence)
+  * [Contribution](#Contribution)
+  * [Tests](#Tests)
   ---
   ---
   ## Instalation
   
-  ${data.instalation}
+  ### ${data.instalation}
   ---
   ---
   ## Usage
   
-  ${data.usage}
+  ### ${data.usage}
   ---
   ---
   ## Lisence
 
   ${licenseSection}
-  ${licenseLink}
+  ### ${licenseLink}
   ---
   ---
   ## Contributions
   
-  ${data.contributions}
+  ### ${data.contributions}
   ---
   ---
   ## Tests
   
-  ${data.tests}
+  ### ${data.tests}
   ---
   ---
   ## Have Questions? Contact Me!
