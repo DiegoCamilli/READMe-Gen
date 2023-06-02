@@ -124,7 +124,7 @@ const questions = [
 
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/README.md', data, err => {
+        fs.writeFile('./Dist/README.md', data, err => {
             if (err) {
                 reject (err)
                 return;
