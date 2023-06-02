@@ -45,9 +45,14 @@ function renderLicenseSection(license) {
 }
 
 function generateMarkdown(data) {
+
+  const licenseBadge = renderLicenseBadge(data.license)
+  const licenseLink = renderLicenseLink(data.license)
+  const licenseSection = renderLicenseSection(data.license)
+
   return `# ${data.title}
   ---
-  ${renderLicenseBadge(data.license)}
+  ${licenseBadge}
 ---
 ---
   ## Description
@@ -59,6 +64,7 @@ function generateMarkdown(data) {
   
   *[Instalation](#Instalation)
   *[Usage](#Usage)
+  *[Lisence](#Lisence)
   *[Contribution](#Contribution)
   *[Tests](#Tests)
   ---
@@ -71,6 +77,12 @@ function generateMarkdown(data) {
   ## Usage
   
   ${data.usage}
+  ---
+  ---
+  ## Lisence
+
+  ${licenseSection}
+  ${licenseLink}
   ---
   ---
   ## Contributions
