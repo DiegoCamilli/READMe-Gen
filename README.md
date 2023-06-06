@@ -1,7 +1,9 @@
 # ReadMe Generator
   ![License](https://img.shields.io/badge/license-GPLv3-blue)
   ## Description
-  This is a simple Node app that uses the terminal to help write an easy and quick ReadMe. Basically if you are busy and/or don't like to write markdown files, you can just use this app to help write one,
+  This is a simple Node app that uses the terminal to help write an easy and quick ReadMe. Basically if you are busy and/or don't like to write markdown files, you can just use this app to help write one.
+  Video Link: https://drive.google.com/file/d/11olx1ymzuiNU1ng0YeqmK0gZwLLyja8G/view
+  
   ![add example](./Assets/appshowing.png)
 ___
   ## Table of Contents
