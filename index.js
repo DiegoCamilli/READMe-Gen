@@ -31,11 +31,11 @@ const questions = [
         }
     },
     {
-        name: 'instalation',
+        name: 'installation',
         type: 'input',
         message: 'Provide instructions for Instalation of your Project.',
-        validate: instalation => {
-            if ( instalation ) {
+        validate: installation => {
+            if ( installation ) {
                 return true
             } else {
                 console.log('Uh Oh! You must provide instalation instructions for your Project.')
@@ -66,11 +66,11 @@ const questions = [
     },
 
     {
-        name: 'contributions',
+        name: 'contribute',
         type: 'input',
         message: 'What are your contribution guidelines? ',
-        validate: contribution => {
-            if ( contribution ) {
+        validate: contribute => {
+            if ( contribute ) {
                 return true
             } else {
                 console.log('Uh Oh! You must provide instructions on how to contribute.')
@@ -131,7 +131,7 @@ function writeToFile(fileName, data) {
             }
             resolve({
                 ok: true, 
-                message: console.log('To view your new READMe file, Check the "Dist" folder. ')
+                message: 'To view your new READMe file, Check the "Dist" folder. '
             })
         })
     })
