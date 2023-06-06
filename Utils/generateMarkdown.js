@@ -1,3 +1,4 @@
+// makes a clickable badge
 function renderLicenseBadge(license) {
   switch (license) {
     case "":
@@ -5,6 +6,8 @@ function renderLicenseBadge(license) {
     default:
       return `![License](https://img.shields.io/badge/license-${license}-blue)`
 }}
+
+// creates a link that is based on the license
 
 function renderLicenseLink(license) {
   switch (license) {
@@ -34,6 +37,8 @@ function renderLicenseLink(license) {
     return link
 }
 
+// explains the coverage of the license
+
 function renderLicenseSection(license) {
   switch (license) {
     case "":
@@ -43,6 +48,8 @@ function renderLicenseSection(license) {
       This Project is utilizing the ${license} license. To learn more click the lisence to view.`
   }
 }
+
+// This will write the markdown file using a blueprint and uses inquire to inject the right info from the user
 
 function generateMarkdown(data) {
 

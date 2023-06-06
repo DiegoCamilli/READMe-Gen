@@ -2,6 +2,8 @@ const fs = require("fs")
 const inquirer = require("inquirer")
 const generateMarkdown = require("./Utils/generateMarkdown")
 
+// these are the prompts for the terminal in order for the user to write the markdown
+
 const questions = [
     {
         name: 'title',
@@ -122,6 +124,7 @@ const questions = [
     }
 ]
 
+// this is functon that makes a readme file by taking the inpput
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile('./Dist/README.md', data, err => {
@@ -137,6 +140,7 @@ function writeToFile(fileName, data) {
     })
 }
 
+// user .then to get the responce or an error
 function init() {
     return inquirer.prompt(questions)
 }
